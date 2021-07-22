@@ -17,7 +17,7 @@ export const conexion2 = async(lat, lon)=>{
         <p>Nivel del mar: ${data.main.sea_level}m</p>
         <p>Temperatura: ${data.main.temp}ºC</p>
         <p>Temperatura máxima: ${data.main.temp_max}ºC</p>
-        <p>Temperatura máxima: ${data.main.temp_min}ºC</p>
+        <p>Temperatura minima: ${data.main.temp_min}ºC</p>
         </div>`;
     }catch{
         throw error;
