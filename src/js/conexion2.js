@@ -6,7 +6,6 @@ export const conexion2 = async(lat, lon)=>{
         const url = `${httpProvider2}lat=${lat}&lon=${lon}&lang=es&units=metric&${keyApi2}`;
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         tiempo.innerHTML = `
         <div class="carta">
         <h3><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png"></h3>

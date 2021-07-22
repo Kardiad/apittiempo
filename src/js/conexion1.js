@@ -14,7 +14,6 @@ export const conexion1 = async(query)=>{
     const url = `${httpProvider}${query}${keyApi}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     if(data.results.length>1){
         ciudadEspecifica.disabled = false;
         ciudadEspecifica.innerHTML = `<option>Seleccione ciudad con ese nombre</option>`;
@@ -28,20 +27,16 @@ export const conexion1 = async(query)=>{
         });
         ciudadEspecifica.addEventListener('change', ()=>{
             const valorEscogido = parseInt(ciudadEspecifica.value);
-            console.log(valorEscogido);
             coordenadas = {
                 lat: Math.round(data.results[valorEscogido].geometry.lat),
                 lng: Math.round(data.results[valorEscogido].geometry.lng)
             }
             x=0;
-            console.log(coordenadas)
             cabecera.classList.remove('inicio');
             cabecera.classList.add('buscado');
             conexion2(coordenadas.lat, coordenadas.lng);
         })
     }else{
-        let hijosDePuta = ciudadEspecifica.children;
-        console.log(hijosDePuta);
         cabecera.classList.remove('inicio');
         cabecera.classList.add('buscado');
         coordenadas = {
