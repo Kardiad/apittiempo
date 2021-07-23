@@ -28,8 +28,8 @@ export const conexion1 = async(query)=>{
         ciudadEspecifica.addEventListener('change', ()=>{
             const valorEscogido = parseInt(ciudadEspecifica.value);
             coordenadas = {
-                lat: Math.round(data.results[valorEscogido].geometry.lat),
-                lng: Math.round(data.results[valorEscogido].geometry.lng)
+                lat: data.results[valorEscogido].geometry.lat,
+                lng: data.results[valorEscogido].geometry.lng
             }
             x=0;
             cabecera.classList.remove('inicio');
